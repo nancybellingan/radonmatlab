@@ -1,0 +1,16 @@
+% Radioactive Decay of Radon by using Monte-Carlo-Simulation
+% for comparison: numerical solution by solving ODEs
+% Version 1.0
+% Date: 14.12.2017
+
+
+function dNdt = RadioactiveDecayMCRadonmodel(t,N)
+  
+  lambda1 = 1.187*10^(-6); %decay constant radium over days
+  lambda2 = 0.182; %decay constant radon over days
+  
+  dNdt= zeros(2,1);  
+  
+  dNdt(1) = -lambda1*N(1);
+  dNdt(2) = -lambda2*N(2) + lambda1*N(1);
+
